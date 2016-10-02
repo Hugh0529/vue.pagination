@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "pagination(vue)",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --no-info",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
   "dependencies": {
-    "vue": "^1.0.0"
+    "es6-promise": "^4.0.3",
+    "vue": "^1.0.0",
+    "vue-router": "^0.7.10"
   },
   "repository": {
     "type": "git",
@@ -29,7 +34,7 @@
     "babel-preset-stage-2": "^6.0.0",
     "babel-runtime": "^6.0.0",
     "body-parser": "^1.14.2",
-    "cors": "^2.7.1",
+    "cross-env": "^3.0.0",
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "vue-hot-reload-api": "^1.2.0",
@@ -37,6 +42,7 @@
     "vue-loader": "^8.0.0",
     "vue-resource": "^0.6.0",
     "vue-style-loader": "^1.0.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   }
 }
