@@ -1,5 +1,8 @@
 <template>
-  <pagination :pagination.sync="pagination"></pagination>
+  <div class="pagination-wrapper">
+    <pagination :pagination.sync="pagination"></pagination>
+    第{{pagination.page}}页,&nbsp;&nbsp;&nbsp;&nbsp;共{{pagination.total}}项
+  </div>
 </template>
 
 <script>
@@ -30,3 +33,13 @@
     }
   }
 </script>
+
+<style>
+  .pagination-wrapper {
+    padding: 10px;
+  }
+
+  .pagination li a {
+    cursor: pointer;
+  }
+</style>
