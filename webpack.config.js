@@ -4,7 +4,7 @@ module.exports = {
   entry: './demo/src/main.js',
   output: {
     path: './demo/static',
-    publicPath: './demo/static/',
+    publicPath: '/demo/static/',
     filename: 'build.js'
   },
   module: {
@@ -37,25 +37,13 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    //new webpack.optimize.UglifyJsPlugin({
-    //  compress: {
-    //    warnings: false
-    //  }
-    //}),
-    //new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.optimize.OccurenceOrderPlugin()
   ]
 } else {
   module.exports.devtool = '#source-map'
-  //module.exports.devtool = 'eval-source-map'
-
-  //module.exports.devServer = {
-  //  // allow access over local network
-  //  host: '0.0.0.0',
-  //  // change port 8080 to 8888, to avoid conflict
-  //  port: 8888,
-  //  // enable HTML5 history routing
-  //  historyApiFallback: true,
-  //  // suppress useless text
-  //  noInfo: true
-  //}
 }
