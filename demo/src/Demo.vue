@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import Pagination from '../../dev/vue.Pagination.vue'
+  import Pagination from '../../pagination/vue.Pagination.vue'
 
   export default {
     components: {
