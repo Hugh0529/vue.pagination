@@ -20,13 +20,16 @@ module.exports = {
         // excluding some local linked packages.
         // for normal use cases only node_modules is needed.
         exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
-        loader: 'babel'
+        loader: 'babel!eslint'
       }
     ]
   },
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
+  },
+  eslint: {
+    formatter: require('eslint-friendly-formatter')
   }
 }
 
